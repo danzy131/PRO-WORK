@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173d2d">
+  <meta name="description" content="FreshBite — delicious food, made fresh and delivered to your door.">
+  <title>FreshBite | Good Food, Good Mood</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="announcement">
+    <span>✦</span> Fresh meals, happy moments. Free delivery on orders over ₦25,000!
+  </div>
+
+  <header class="header">
+    <a href="#" class="logo">
+      <span class="logo-icon">F.</span>
+      <span>fresh<span class="logo-accent">bite</span><small>GOOD FOOD, GOOD MOOD</small></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+    <nav class="nav" id="mainNav">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#menu" class="nav-link">Our Menu</a>
+      <a href="#about" class="nav-link">Our Story</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-button" id="searchToggle" aria-label="Search food">⌕</button>
+      <button class="cart-button" id="cartToggle">
+        <span>Bag</span>
+        <span class="cart-icon">🛍</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow"><span></span> YOUR DAILY DOSE OF DELICIOUS</div>
+        <h1>Good food.<br>Great <span>mood.</span></h1>
+        <p class="hero-description">
+          From our kitchen to your table, discover fresh flavours
+          made with love and served with a little extra joy.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#menu" class="btn btn-primary">Explore our menu <span>↗</span></a>
+          <a href="#about" class="text-link">Discover our story <span>→</span></a>
+        </div>
+
+        <div class="hero-stats">
+          <div><strong>4.9<span>★</span></strong><small>Customer rating</small></div>
+          <div class="stat-divider"></div>
+          <div><strong>30<span>min</span></strong><small>Average delivery</small></div>
+          <div class="stat-divider"></div>
+          <div><strong>100<span>%</span></strong><small>Freshly prepared</small></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <!-- Replace images/hero-food.jpg with your main food photograph -->
+        <div class="hero-image-wrap">
+          <img src="images/hero-food.jpg" alt="Freshly prepared signature meal"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+          <div class="image-placeholder hero-placeholder">🍲<small>YOUR SIGNATURE DISH</small></div>
+        </div>
+        <div class="floating-card floating-top">
+          <span class="floating-emoji">✦</span>
+          <div><strong>Made fresh</strong><small>Every single day</small></div>
+        </div>
+        <div class="floating-card floating-bottom">
+          <span class="rating-stars">★★★★★</span>
+          <strong>Loved by foodies</strong>
+          <small>Good taste, great memories.</small>
+        </div>
+        <div class="hero-orbit"></div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div><span>♧</span><div><strong>Fresh ingredients</strong><small>Quality in every bite</small></div></div>
+      <div><span>♨</span><div><strong>Made to order</strong><small>Prepared just for you</small></div></div>
+      <div><span>⌁</span><div><strong>Fast delivery</strong><small>Good food, right on time</small></div></div>
+      <div><span>♡</span><div><strong>Made with love</strong><small>Every meal matters</small></div></div>
+    </section>
+
+    <section class="menu-section section-pad" id="menu">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow"><span></span> SOMETHING DELICIOUS</div>
+          <h2>Explore our <span>menu.</span></h2>
+          <p>Cravings don't wait. Find your next favourite.</p>
+        </div>
+        <a href="#menu" class="text-link desktop-link">Discover all dishes ↗</a>
+      </div>
+
+      <div class="menu-tools">
+        <div class="category-list" id="categoryList">
+          <button class="category-btn active" data-category="All">All dishes</button>
+          <button class="category-btn" data-category="Rice">Rice & bowls</button>
+          <button class="category-btn" data-category="Grills">Grills</button>
+          <button class="category-btn" data-category="Swallow">Soups & swallow</button>
+          <button class="category-btn" data-category="Sides">Sides</button>
+          <button class="category-btn" data-category="Drinks">Drinks</button>
+        </div>
+        <label class="search-box" id="searchBox">
+          <span>⌕</span>
+          <input id="foodSearch" type="search" placeholder="Search meals..." aria-label="Search meals">
+        </label>
+      </div>
+
+      <div class="food-grid" id="foodGrid">
+        <!-- JavaScript creates the food cards here -->
+      </div>
+
+      <div class="empty-state" id="emptyState" hidden>
+        <span>🍽️</span>
+        <h3>No dishes found</h3>
+        <p>Try another search or category.</p>
+      </div>
+    </section>
+
+    <section class="promo-section section-pad" id="about">
+      <div class="promo-card">
+        <div class="promo-copy">
+          <div class="eyebrow light-eyebrow"><span></span> A LITTLE SOMETHING EXTRA</div>
+          <h2>Good food is<br>always a <em>good idea.</em></h2>
+          <p>Gather your favourites, try something new, and make every meal worth remembering.</p>
+          <a href="#menu" class="btn btn-light">Find your favourite <span>↗</span></a>
+        </div>
+        <div class="promo-decoration" aria-hidden="true">
+          <div class="promo-circle"></div>
+          <span>FRESH<br>& TASTY</span>
+          <div class="promo-spark">✳</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter section-pad" id="contact">
+      <div>
+        <div class="eyebrow"><span></span> STAY IN THE LOOP</div>
+        <h2>A little taste of <span>goodness.</span></h2>
+        <p>Get updates on new dishes, special offers and more.</p>
+      </div>
+      <form class="newsletter-form" id="newsletterForm">
+        <label for="newsletterEmail" class="sr-only">Your email address</label>
+        <input type="email" id="newsletterEmail" placeholder="Enter your email address" required>
+        <button class="btn btn-primary" type="submit">Keep me posted ↗</button>
+      </form>
+      <p class="newsletter-message" id="newsletterMessage" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#home" class="logo footer-logo">
+      <span class="logo-icon">F.</span>
+      <span>fresh<span class="logo-accent">bite</span><small>GOOD FOOD, GOOD MOOD</small></span>
+    </a>
+    <p>Fresh flavours. Happy hearts. © <span id="year"></span> FreshBite.</p>
+    <a href="#home" class="back-top">Back to top ↑</a>
+  </footer>
+
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="drawer-header">
+      <div><span class="eyebrow">YOUR SELECTION</span><h2>Your food bag <span id="drawerCount">(0)</span></h2></div>
+      <button class="close-button" id="cartClose" aria-label="Close cart">✕</button>
+    </div>
+
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty"><span>🛍</span><h3>Your bag is hungry.</h3><p>Add something delicious to get started.</p></div>
+    </div>
+
+    <div class="cart-footer">
+      <div class="subtotal-row"><span>Subtotal</span><strong id="cartSubtotal">₦0</strong></div>
+      <p class="delivery-note">Delivery charges are confirmed at checkout.</p>
+      <button class="btn btn-primary checkout-btn" id="checkoutButton">Continue to checkout ↗</button>
+      <button class="continue-shopping" id="continueShopping">Continue exploring</button>
+    </div>
+  </aside>
+
+  <section class="checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle" aria-hidden="true">
+    <div class="checkout-panel">
+      <div class="drawer-header">
+        <div><span class="eyebrow">ALMOST THERE</span><h2 id="checkoutTitle">Your details</h2></div>
+        <button class="close-button" id="checkoutClose" aria-label="Close checkout">✕</button>
+      </div>
+      <p class="checkout-intro">Tell us where to deliver your delicious order.</p>
+      <form id="checkoutForm">
+        <label for="customerName">Full name</label>
+        <input id="customerName" name="name" autocomplete="name" required placeholder="Your full name">
+        <label for="customerPhone">Phone number</label>
+        <input id="customerPhone" name="phone" type="tel" autocomplete="tel" required placeholder="Your phone number">
+        <label for="customerAddress">Delivery address</label>
+        <textarea id="customerAddress" name="address" autocomplete="street-address" required placeholder="Street, area and city"></textarea>
+        <label for="customerNotes">Order notes (optional)</label>
+        <textarea id="customerNotes" name="notes" placeholder="Special instructions or preferences"></textarea>
+        <div class="checkout-total"><span>Order subtotal</span><strong id="checkoutTotal">₦0</strong></div>
+        <button class="btn btn-primary checkout-btn" type="submit">Place order via WhatsApp ↗</button>
+        <p class="form-note">This demo sends your order to WhatsApp. Configure your business number in script.js first.</p>
+      </form>
+    </div>
+  </section>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+</body>
+</html>
